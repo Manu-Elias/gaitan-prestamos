@@ -1,4 +1,5 @@
-function inicio() {
+function inicio(datosUsuario) {
+
   alert("Bienvenido al simulador de Prestamos de Banck-PBE");
 // se pregunta si quiere cargar usuarios al sistema de consultas
   let registrarMasUser = true;
@@ -9,11 +10,10 @@ function inicio() {
       registoUsuario();
     }
     else {
-
       registrarMasUser = false;
-      acceso(datosUsuario);
     }
   }
+  acceso(datosUsuario);
 }
 
 
@@ -103,13 +103,15 @@ const contrasenaInvalida = (contrasena) => {
 // La funcion de aaceso va a evaluar y comparar el correo y la contraseña 
 // con los datos de usuarios guardados en el array
 
-function acceso(datosUsuario) {
+function acceso() {
   let accesoFallido = true;
   while (accesoFallido) {
     let ingresar = prompt("ingrese Email para iniciar Sesion\n persona@gmail.com ");
     let contrasena = prompt("Ingrese su contraseña");
 
-    const user = datosUsuario.find(user => user.correo === ingresar && user.contrasena === contrasena);
+    const usuariosStg = JSON.parse(localStorage.getItem('datosUsuario'));
+
+    const user = usuariosStg.find(user => user.correo === ingresar && user.contrasena === contrasena);
     if (user) {
       alert(`Bienvenido ${user.correo}`);
       accesoFallido = false;
@@ -157,7 +159,11 @@ function calcularCuota() {
 
 // Arrancque del programa 
 
-inicio()
+inicio(datosUsuario)
+if (datosUsuario.length !== 0){
+  localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
+}
+
 // Se pregunta al usuario si quiere simular otro prestamos o ingresar otro usuario para simular su prestamo volviendo al inicio del programa
 let reinicio = true;
 while (reinicio) {
