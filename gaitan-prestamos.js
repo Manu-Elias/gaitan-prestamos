@@ -1,11 +1,14 @@
 function inicio(datosUsuario) {
 
-  alert("Bienvenido al simulador de Prestamos de Banck-PBE");
+  // alert("Bienvenido al simulador de Prestamos de Banck-PBE");
 // se pregunta si quiere cargar usuarios al sistema de consultas
   let registrarMasUser = true;
 
   while (registrarMasUser) {
-    const contuniarRegistrando = prompt("Registre Usuarios \n Presione S  \n Presione cualquier tecla para salir").toUpperCase()
+    // const contuniarRegistrando = prompt("Registre Usuarios \n Presione S  \n Presione cualquier tecla para salir").toUpperCase()
+    contuniarRegistrando = document.getElementsByClassName("Registrarme")
+    
+ 
     if (contuniarRegistrando === "S") {
       registoUsuario();
     }
@@ -14,6 +17,7 @@ function inicio(datosUsuario) {
     }
   }
   acceso(datosUsuario);
+  
 }
 
 
