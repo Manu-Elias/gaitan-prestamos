@@ -23,10 +23,13 @@ class Usuario {
     this.contrasena = contrasena;
   }
 }
-// se crean el registro de usuarios y se verifica 
-// antes de cargarlos si el correo y la contraseña coinsiden con los parametros requeridos
+
 let datosUsuario = [];
 console.log(datosUsuario)
+
+
+// se crean el registro de usuarios y se verifica 
+// antes de cargarlos si el correo y la contraseña coinsiden con los parametros requeridos
 
 const registoUsuario = () => {
 
