@@ -1,23 +1,16 @@
 function inicio(datosUsuario) {
-
-  // alert("Bienvenido al simulador de Prestamos de Banck-PBE");
-// se pregunta si quiere cargar usuarios al sistema de consultas
   let registrarMasUser = true;
+// El bucle va a cargar usuarios hasta  que se presione el boton ingresar
+  const ingresar = document.getElementById('ingresar');
+  ingresar.addEventListener('click', () => {
+    registrarMasUser = false;
+  });
 
   while (registrarMasUser) {
-    // const contuniarRegistrando = prompt("Registre Usuarios \n Presione S  \n Presione cualquier tecla para salir").toUpperCase()
-    contuniarRegistrando = document.getElementsByClassName("Registrarme")
-    
- 
-    if (contuniarRegistrando === "S") {
-      registoUsuario();
-    }
-    else {
-      registrarMasUser = false;
-    }
+    registoUsuario();
   }
+
   acceso(datosUsuario);
-  
 }
 
 
@@ -37,10 +30,10 @@ console.log(datosUsuario)
 
 const registoUsuario = () => {
 
-  let nombre = prompt("ingrese su nombre");
-  let apellido = prompt("ingrese su apellido");
-  let dni = prompt("ingrese su DNI");
-  let correo = prompt("ingrese Email\n persona@gmail.com ");
+  // let nombre = prompt("ingrese su nombre");
+  // let apellido = prompt("ingrese su apellido");
+  // let dni = prompt("ingrese su DNI");
+  // let correo = prompt("ingrese Email\n persona@gmail.com ");
   let expresionRegular = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   if (!expresionRegular.test(correo)) {
@@ -164,7 +157,7 @@ function calcularCuota() {
 // Arrancque del programa 
 
 inicio(datosUsuario)
-if (datosUsuario.length !== 0){
+if (datosUsuario.length !== 0) {
   localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
 }
 
