@@ -57,7 +57,7 @@
 /* Registro */
 
 .registrarce {
-    height: 500px;
+    height: 560px;
     width: 400px;
     border: 1px solid rgba(207, 200, 219, 0.714);
     border-radius: 8px;
@@ -88,10 +88,26 @@
 
 }
 
+
+.alerta{
+  width: 400px;
+  text-align: center;
+  font-weight:bold;
+  color: rgb(249, 0, 0);
+  
+}
+
+.valido{
+  width: 400px;
+  text-align: center;
+  font-weight:bold;
+  color: rgb(8, 156, 45);
+}
+
 /* Ingreso */
 
 .ingreso {
-    height: 300px;
+    height: 360px;
     width: 400px;
     border: 1px solid rgba(207, 200, 219, 0.714);
     border-radius: 8px;
@@ -122,6 +138,14 @@
     object-fit: cover;
 
 
+}
+
+.texto{
+  width: 400px;
+  text-align: center;
+  font-weight:bold;
+  /* color: rgb(249, 0, 0); */
+  color: chartreuse;
 }
 
 /* simulacionPrestamo */

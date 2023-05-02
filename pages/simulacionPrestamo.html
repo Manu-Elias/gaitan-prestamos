@@ -47,7 +47,7 @@
     </nav>
   </header>
   <main>
-    <section >
+    <section>
 
 
 
@@ -60,22 +60,22 @@
           <p>¿Cuánto necesitas?</p>
           <div class="input-group  mb-4">
             <div class="input-group-text" id="btnGroupAddon">$</div>
-            <input type="text" class="form-control" placeholder="400.000" aria-label="Input group example"
+            <input type="text" id="monto" class="form-control" placeholder="400.000" aria-label="Input group example"
               aria-describedby="btnGroupAddon">
           </div>
           <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group me-2" role="group" aria-label="First group">
-              <button type="button" class=" botonCuota btn btn-outline-secondary">12</button>
-              <button type="button" class=" botonCuota btn btn-outline-secondary">24</button>
-              <button type="button" class=" botonCuota btn btn-outline-secondary">36</button>
-              <button type="button" class=" botonCuota btn btn-outline-secondary">48</button>
-              <button type="button" class=" botonCuota btn btn-outline-secondary">72</button>
-              <button type="button" class=" botonCuota btn btn-outline-secondary">84</button>
+              <button type="button" id="12" class=" botonCuota btn btn-outline-secondary">12</button>
+              <button type="button" id="24" class=" botonCuota btn btn-outline-secondary">24</button>
+              <button type="button" id="36" class=" botonCuota btn btn-outline-secondary">36</button>
+              <button type="button" id="48" class=" botonCuota btn btn-outline-secondary">48</button>
+              <button type="button" id="72" class=" botonCuota btn btn-outline-secondary">72</button>
+              <button type="button" id="84" class=" botonCuota btn btn-outline-secondary">84</button>
             </div>
-            
+
           </div>
           <p>¿A qué plazo quieres pagarlo? </p>
-          <button type="submit" class=" botonCotizar btn btn-success m-2 ">Cotizar</button>
+          <button type="submit" id="cotizar" class=" botonCotizar btn btn-success m-2 ">Cotizar</button>
         </div>
         <div class="col-6 d-flex flex-column align-items-center justify-content-center">
           <table class="table">
@@ -91,37 +91,40 @@
               <tr>
                 <th scope="row"></th>
                 <td>Capital solicitado</td>
-                <td>Otto</td>
+                <td id="Capital solicitado">0</td>
                 <td>@mdo</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>Capital a devolver</td>
-                <td>Thornton</td>
+                <td id="Capital a devolver">0</td>
                 <td>@fat</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>N° de Cuotas</td>
-                <td>Thornton</td>
+                <td id="N° de Cuotas">0</td>
                 <td>@fat</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>Monto Cuotas</td>
-                <td>Thornton</td>
+                <td id="Monto Cuotas">0</td>
                 <td>@fat</td>
+
               </tr>
-              
+
+
             </tbody>
           </table>
-        <button type="submit" class=" botonSolicitar btn btn-success m-2 ">Solicitar</button>
+          <button type="submit" id="botSolicitar" class=" botonSolicitar btn btn-success m-2 ">Solicitar</button>
+          <p id="mensaje" class="valido"></p>
 
         </div>
 
-        </div>
       </div>
-      
+      </div>
+
 
     </section>
 
@@ -130,6 +133,10 @@
   <footer>
 
   </footer>
+  <script src="../js/simulacion-prestamos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
