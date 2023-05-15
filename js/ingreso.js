@@ -11,8 +11,7 @@ function verificarUsuarios() {
     texto.innerHTML = "";
 
     const usuariosStg = JSON.parse(localStorage.getItem("usuarios"));
-    const user = usuariosStg.find(
-      (user) => user.correo === correo.value && user.contrasena === contrasena.value);
+    const user = usuariosStg.find((user) => user.correo === correo.value && user.contrasena === contrasena.value);
 
     if (user) {
       // Guardamos el usuario que ingresó en sessionStorage para poder usarlos en la pagina de comprobante para mostrar los datos
