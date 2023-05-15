@@ -27,29 +27,24 @@ const enviarFormulario = () => {
     let alerta = "";
     let entrar = false;
     parrafo.innerHTML = "";
-
+   // Expresión regular para verificar el formato del correo electrónico
     let expresionRegular = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (dni.value.length < 8) {
-      alerta += "ingrese un DNI valido <br>"
+  
+   // Se validan los campos del formulario utilizando operadores abanzados
+    alerta += dni.value.length < 8 ? "Ingrese un DNI válido <br>" : "";
+    alerta += !expresionRegular.test(correo.value) ? "El email no es válido <br>" : "";
+    alerta += contrasena.value.length < 8 ? "La contraseña no es válida <br>" : "";
+    // Si se encuentra alguna alerta, cambiamos la variable 'entrar' a true
+    if (alerta !== "") {
       entrar = true;
     }
-    if (!expresionRegular.test(correo.value)) {
-      alerta += "El Email no es valido <br>"
-      entrar = true;
-    }
+    // Si la variable 'entrar' es true, mostramos las alertas, de lo contrario mostramos "Enviado"
+    parrafo.innerHTML = entrar ? alerta : "Enviado";
 
-    if (contrasena.value.length < 8) {
-      alerta += "La contraseña no es valida <br>"
-      entrar = true;
-    }
-    if (entrar) {
-      parrafo.innerHTML = alerta;
 
-    }
-    else {
-      parrafo.innerHTML = "Enviado";
-    }
+
+
     // Creamos una nueva instancia de Usuario con los datos del formulario
     const nuevoUsuario = new Usuario(nombre.value, apellido.value, correo.value, dni.value, contrasena.value);
 
